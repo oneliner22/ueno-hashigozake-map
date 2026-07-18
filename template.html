@@ -70,6 +70,9 @@ header.hero{ text-align:center; padding:26px 16px 10px; position:relative; }
 .spot .ct{font-size:10.5px;color:#8a7350;margin-left:4px}
 .spot .approx{font-size:10px;color:#b07d2a}
 .spot .yt{font-size:10.5px;color:#e62117;font-weight:700;margin-left:6px}
+.spot .hrs{display:block;font-size:10.5px;color:#4a7fb5;margin-top:2px}
+.spot .hrs.closed{color:#b05050}
+.modal-hours{font-size:12.5px;color:#3a5a8a;background:#eef3fb;border:1px solid #cfd9ec;border-radius:10px;padding:7px 10px;margin:0 0 12px}
 footer{text-align:center;font-size:11.5px;color:#8a7350;padding:24px 14px}
 .backdrop{position:fixed;inset:0;background:rgba(40,25,10,.5);display:none;z-index:1000;
   align-items:flex-start;justify-content:center;padding:24px 12px;overflow:auto}
@@ -113,6 +116,7 @@ footer{text-align:center;font-size:11.5px;color:#8a7350;padding:24px 14px}
   <div class="controls">
     <input type="search" id="search" placeholder="🔍 スポット名・説明で検索">
     <div class="chipfilter" id="catfilter"></div>
+    <div class="chipfilter" id="sunfilter"></div>
   </div>
   <div id="map"></div>
   <p class="legend-note">📍 マーカーの色＝エリア。密集地はまとめて表示され、拡大すると分かれます。マーカーをクリックすると詳細が開きます。</p>
@@ -159,12 +163,28 @@ SPOTS.forEach(s=>{
     fillColor: isVenue?'#111':col, fillOpacity:.92 });
   m.bindPopup(`<div class="pop-name">${isVenue?'🎤 ':''}${esc(s.name)}</div>`+
     `<div class="pop-area">${esc(areaById[s.area].name)} ・ ${esc(s.cat)}${s.approx?' ・ およその位置':''}</div>`+
+    (s.sun?`<div class="pop-area">🕒 日曜: ${esc(s.sun)}</div>`:'')+
     (s.videos.length?`<button class="pop-btn" onclick="openModal('${s.slug}')">紹介動画を見る (${s.videos.length})</button>`:''));
   m.spotSlug=s.slug; markerBySlug[s.slug]=m; cluster.addLayer(m);
 });
 map.addLayer(cluster);
 
-let activeCats = new Set(CATS), activeAreas = new Set(AREAS.map(a=>a.id)), q='';
+const SUN_META = {
+  "lunch":   {label:"☀️ 日曜昼から営業", color:"#e8a13f"},
+  "evening": {label:"🌙 日曜夕方〜営業", color:"#5b6ee1"},
+  "closed":  {label:"🚫 日曜定休",       color:"#9a8f80"},
+  "unknown": {label:"❓ 日曜営業不明",   color:"#c9bda9"},
+};
+const sunOf = s => s.sun_class || 'unknown';
+const SUNS = ["lunch","evening","closed","unknown"].filter(k=>SPOTS.some(s=>s.cat!=='会場' && sunOf(s)===k));
+let activeCats = new Set(CATS), activeAreas = new Set(AREAS.map(a=>a.id)), activeSuns = new Set(SUNS), q='';
+const sunWrap=document.getElementById('sunfilter');
+SUNS.forEach(k=>{
+  const el=document.createElement('div'); el.className='cfilter'; el.dataset.on='1';
+  el.innerHTML=`<span class="dot" style="background:${SUN_META[k].color}"></span>${SUN_META[k].label}`;
+  el.onclick=()=>{ if(activeSuns.has(k)){activeSuns.delete(k);el.dataset.on='0';}else{activeSuns.add(k);el.dataset.on='1';} render(); };
+  sunWrap.appendChild(el);
+});
 const catWrap=document.getElementById('catfilter');
 CATS.forEach(c=>{
   const el=document.createElement('div'); el.className='cfilter'; el.dataset.on='1'; el.dataset.cat=c;
@@ -183,6 +203,7 @@ document.getElementById('search').addEventListener('input',e=>{q=e.target.value.
 
 function visible(s){
   if(s.cat!=='会場' && !activeCats.has(s.cat)) return false;
+  if(s.cat!=='会場' && !activeSuns.has(sunOf(s))) return false;
   if(!activeAreas.has(s.area)) return false;
   if(q && !(s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q))) return false;
   return true;
@@ -207,7 +228,8 @@ function render(){
       sp.innerHTML=`<span class="nm">${s.cat==='会場'?'🎤 ':''}${esc(s.name)}</span>`+
         `<span class="ct">${esc(s.cat)}</span>`+
         (s.videos.length?`<span class="yt">▶${s.videos.length}</span>`:'')+
-        (s.approx?'<span class="approx"> ・およその位置</span>':'');
+        (s.approx?'<span class="approx"> ・およその位置</span>':'')+
+        (s.sun?`<span class="hrs${sunOf(s)==='closed'?' closed':''}">🕒 日曜 ${esc(s.sun)}</span>`:'');
       sp.addEventListener('click',()=>openModal(s.slug));
       grid.appendChild(sp);
     });
@@ -226,6 +248,7 @@ function openModal(slug){
   document.getElementById('m-sub').textContent=`${areaById[s.area].name} ・ ${s.cat}`;
   const body=document.getElementById('m-body');
   let html=`<div class="modal-desc">${esc(s.desc)}</div>`;
+  if(s.sun) html+=`<div class="modal-hours">🕒 日曜の営業: <b>${esc(s.sun)}</b>${s.sun_note?` ・ ${esc(s.sun_note)}`:''}<br><span style="font-size:11px;color:#8a7350">※2026年7月調査時点。変更の可能性があるため訪問前に要確認</span></div>`;
   if(s.approx) html+=`<div class="modal-note">※ 番地が確定できなかったため、エリア内のおよその位置に配置しています。</div>`;
   if(s.videos.length){
     html+=`<div class="reply-label">この場所が登場するYouTube動画（${s.videos.length}本）</div>`;
