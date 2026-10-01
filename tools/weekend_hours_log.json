@@ -1,0 +1,530 @@
+[
+ {
+  "slug": "daitoryo-honten",
+  "name": "もつ焼 大統領 本店",
+  "cur_sun": "10:00〜23:30",
+  "cur_sun_note": "無休。閉店時刻は情報源により揺れあり",
+  "candidates": [
+   {
+    "name": "もつ焼大統領 本店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目１０−１４",
+    "status": "OPERATIONAL",
+    "dist_m": 3,
+    "sat": "土曜日: 10時00分～23時30分",
+    "sun": "日曜日: 10時00分～23時30分"
+   },
+   {
+    "name": "もつ焼 大統領 支店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目１３−２",
+    "status": "OPERATIONAL",
+    "dist_m": 44,
+    "sat": "土曜日: 10時00分～23時30分",
+    "sun": "日曜日: 10時00分～23時30分"
+   }
+  ]
+ },
+ {
+  "slug": "daitoryo-shiten",
+  "name": "もつ焼 大統領 支店",
+  "cur_sun": "10:00〜23:30",
+  "cur_sun_note": "無休",
+  "candidates": [
+   {
+    "name": "もつ焼 大統領 支店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目１３−２",
+    "status": "OPERATIONAL",
+    "dist_m": 5,
+    "sat": "土曜日: 10時00分～23時30分",
+    "sun": "日曜日: 10時00分～23時30分"
+   }
+  ]
+ },
+ {
+  "slug": "takioka",
+  "name": "たきおか（上野1号店）",
+  "cur_sun": "7:00〜23:30",
+  "cur_sun_note": "無休。朝7時から飲める",
+  "candidates": [
+   {
+    "name": "立飲み たきおか",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目９−１４",
+    "status": "OPERATIONAL",
+    "dist_m": 17,
+    "sat": "土曜日: 7時00分～23時00分",
+    "sun": "日曜日: 7時00分～23時00分"
+   },
+   {
+    "name": "立ち飲み たきおか 3号店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目８−１７ 江波戸ビル",
+    "status": "OPERATIONAL",
+    "dist_m": 82,
+    "sat": "土曜日: 11時00分～23時30分",
+    "sun": "日曜日: 11時00分～22時00分"
+   }
+  ]
+ },
+ {
+  "slug": "kadokura",
+  "name": "立飲み カドクラ",
+  "cur_sun": "11:00〜22:00",
+  "cur_sun_note": "年中無休。金土祝前日は23:00まで",
+  "candidates": [
+   {
+    "name": "立飲みカドクラ",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目１３−１ 1F",
+    "status": "OPERATIONAL",
+    "dist_m": 9,
+    "sat": "土曜日: 11時00分～23時00分",
+    "sun": "日曜日: 11時00分～22時00分"
+   }
+  ]
+ },
+ {
+  "slug": "ohyama",
+  "name": "肉の大山 上野店",
+  "cur_sun": "11:00〜22:00",
+  "cur_sun_note": "年中無休（元旦除く）。平日は23:00まで",
+  "candidates": [
+   {
+    "name": "肉の大山 上野店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目１３−２ 渡辺上野ビル 2F",
+    "status": "OPERATIONAL",
+    "dist_m": 9,
+    "sat": "土曜日: 11時00分～21時00分",
+    "sun": "日曜日: 11時00分～21時00分"
+   }
+  ]
+ },
+ {
+  "slug": "kacchan",
+  "name": "天ぷら酒場 かっちゃん",
+  "cur_sun": "11:00〜21:45",
+  "cur_sun_note": "年中無休",
+  "candidates": [
+   {
+    "name": "かっちゃん",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目１２−１３",
+    "status": "OPERATIONAL",
+    "dist_m": 9,
+    "sat": "土曜日: 11時00分～22時00分",
+    "sun": "日曜日: 11時00分～22時00分"
+   }
+  ]
+ },
+ {
+  "slug": "hamachan",
+  "name": "地魚屋台 浜ちゃん 上野店",
+  "cur_sun": "11:30〜23:00",
+  "cur_sun_note": "無休。開店時刻は情報源により10:00〜11:30と揺れあり",
+  "candidates": [
+   {
+    "name": "地魚屋台 浜ちゃん 上野店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目９−１３",
+    "status": "OPERATIONAL",
+    "dist_m": 4,
+    "sat": "土曜日: 11時30分～23時00分",
+    "sun": "日曜日: 11時30分～23時00分"
+   }
+  ]
+ },
+ {
+  "slug": "toribancho",
+  "name": "鳥番長 上野店",
+  "cur_sun": "11:30〜23:30",
+  "cur_sun_note": "土日祝は昼から。平日は17:00開店",
+  "candidates": [
+   {
+    "name": "鳥番長 上野昭和通り店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目７−１８ メッツビル １Ｆ",
+    "status": "OPERATIONAL",
+    "dist_m": 8,
+    "sat": "土曜日: 11時30分～23時30分",
+    "sun": "日曜日: 11時30分～23時30分"
+   }
+  ]
+ },
+ {
+  "slug": "hokuhan",
+  "name": "みちのく料理 北畔",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祭日定休（8月は土曜も休み）",
+  "candidates": [
+   {
+    "name": "北畔",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目７−１０",
+    "status": "OPERATIONAL",
+    "dist_m": 12,
+    "sat": "土曜日: 17時00分～22時30分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "tarumatsu",
+  "name": "たる松 本店",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜定休（公式サイト）",
+  "candidates": [
+   {
+    "name": "たる松 本店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目４−４−１３",
+    "status": "OPERATIONAL",
+    "dist_m": 4,
+    "sat": "土曜日: 11時00分～22時00分",
+    "sun": "日曜日: 11時00分～22時00分"
+   },
+   {
+    "name": "全国銘酒 たる松 上野店",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目８−１０",
+    "status": "OPERATIONAL",
+    "dist_m": 135,
+    "sat": "土曜日: 11時00分～22時30分",
+    "sun": "日曜日: 11時00分～22時30分"
+   }
+  ]
+ },
+ {
+  "slug": "cocktailworks",
+  "name": "COCKTAIL WORKS 上野",
+  "cur_sun": "17:30〜翌2:30",
+  "cur_sun_note": "年末年始のみ休み",
+  "candidates": [
+   {
+    "name": "BAR COCKTAIL WORKS 上野",
+    "address": "日本、〒110-0005 東京都台東区上野６丁目７−１５ 上野ビル TC80 1F",
+    "status": "OPERATIONAL",
+    "dist_m": 8,
+    "sat": "土曜日: 17時30分～2時30分",
+    "sun": "日曜日: 17時30分～2時30分"
+   }
+  ]
+ },
+ {
+  "slug": "butabazaar",
+  "name": "東京豚バザール",
+  "cur_sun": "16:00〜22:30",
+  "cur_sun_note": "土日祝はディナーのみ",
+  "candidates": [
+   {
+    "name": "東京豚バザール",
+    "address": "日本、〒110-0005 東京都台東区上野７丁目３−２ ５Ｆ",
+    "status": "OPERATIONAL",
+    "dist_m": 7,
+    "sat": "土曜日: 16時00分～22時30分",
+    "sun": "日曜日: 16時00分～22時30分"
+   }
+  ]
+ },
+ {
+  "slug": "seiseihanten",
+  "name": "晴々飯店",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜定休。月〜土は11:00〜15:00/17:00〜23:00",
+  "candidates": [
+   {
+    "name": "晴々飯店",
+    "address": "日本、〒110-0005 東京都台東区上野７丁目８−１６",
+    "status": "OPERATIONAL",
+    "dist_m": 5,
+    "sat": "土曜日: 11時00分～15時00分, 17時00分～23時00分",
+    "sun": "日曜日: 11時00分～15時00分, 17時00分～23時00分"
+   }
+  ]
+ },
+ {
+  "slug": "lecrin",
+  "name": "ブラッスリー・レカン",
+  "cur_sun": "11:00〜22:00",
+  "cur_sun_note": "無休（アトレ上野に準ずる）。閉店時刻は情報源により揺れあり",
+  "candidates": [
+   {
+    "name": "The Arts Fusion by Lécrin／ジ・アーツ・フュージョン・バイ レカン - 上野",
+    "address": "日本、〒110-0005 東京都台東区上野７丁目１−１",
+    "status": "OPERATIONAL",
+    "dist_m": 165,
+    "sat": "土曜日: 11時00分～22時30分",
+    "sun": "日曜日: 11時00分～22時30分"
+   }
+  ]
+ },
+ {
+  "slug": "santaro",
+  "name": "街かど酒場 さんたろう",
+  "cur_sun": "14:00〜23:00",
+  "cur_sun_note": "土日祝は14:00開店（平日16:00）。不定休",
+  "candidates": [
+   {
+    "name": "さんたろう 上野店",
+    "address": "日本、〒110-0005 東京都台東区上野７丁目３−９",
+    "status": "OPERATIONAL",
+    "dist_m": 10,
+    "sat": "土曜日: 14時00分～23時00分",
+    "sun": "日曜日: 14時00分～23時00分"
+   }
+  ]
+ },
+ {
+  "slug": "torahachi",
+  "name": "やきとん酒場 上野 とら八",
+  "cur_sun": "16:00〜23:00",
+  "cur_sun_note": "定休は年末年始のみ（公式サイト）",
+  "candidates": [
+   {
+    "name": "やきとん酒場 上野とら八",
+    "address": "日本、〒110-0005 東京都台東区上野２丁目２−２",
+    "status": "OPERATIONAL",
+    "dist_m": 5,
+    "sat": "土曜日: 16時00分～23時20分",
+    "sun": "日曜日: 16時00分～23時00分"
+   }
+  ]
+ },
+ {
+  "slug": "tokitori",
+  "name": "焼き鳥 刻鳥",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日休み。月〜土17:00〜24:00・要予約",
+  "candidates": [
+   {
+    "name": "焼鳥刻鳥",
+    "address": "日本、〒110-0005 東京都台東区上野３丁目２３−３ J-ROADビル 2F",
+    "status": "OPERATIONAL",
+    "dist_m": 6,
+    "sat": "土曜日: 17時00分～23時00分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "renkon",
+  "name": "れんこん",
+  "cur_sun": "16:00〜23:00",
+  "cur_sun_note": "無休（年末年始のみ休）",
+  "candidates": [
+   {
+    "name": "れんこん",
+    "address": "日本、〒110-0005 東京都台東区上野４丁目９−１",
+    "status": "OPERATIONAL",
+    "dist_m": 8,
+    "sat": "土曜日: 16時00分～23時30分",
+    "sun": "日曜日: 16時00分～23時00分"
+   }
+  ]
+ },
+ {
+  "slug": "nagaokaya",
+  "name": "下町バル ながおか屋",
+  "cur_sun": "12:00〜23:00",
+  "cur_sun_note": "無休。金曜のみ17:00開店",
+  "candidates": [
+   {
+    "name": "下町バル ながおか屋",
+    "address": "日本、〒110-0005 東京都台東区上野２丁目９−５",
+    "status": "OPERATIONAL",
+    "dist_m": 6,
+    "sat": "土曜日: 12時00分～22時30分",
+    "sun": "日曜日: 12時00分～22時30分"
+   }
+  ]
+ },
+ {
+  "slug": "tamura",
+  "name": "焼肉 たむら 上野本店",
+  "cur_sun": "16:00〜翌5:00",
+  "cur_sun_note": "月〜土は翌9:00まで、日曜は翌5:00まで",
+  "candidates": [
+   {
+    "name": "焼肉たむら 新本店",
+    "address": "日本、〒110-0005 東京都台東区上野２丁目２−７",
+    "status": "OPERATIONAL",
+    "dist_m": 6,
+    "sat": "土曜日: 17時00分～9時00分",
+    "sun": "日曜日: 17時00分～5時00分"
+   },
+   {
+    "name": "焼肉たむら 別館",
+    "address": "日本、〒110-0005 東京都台東区上野２丁目５−１ ２０１",
+    "status": "OPERATIONAL",
+    "dist_m": 16,
+    "sat": null,
+    "sun": null
+   },
+   {
+    "name": "焼肉たむら 仲町通り店",
+    "address": "日本、〒110-0005 東京都台東区上野２丁目８−４ 日栄ビル1番館",
+    "status": "OPERATIONAL",
+    "dist_m": 82,
+    "sat": "土曜日: 11時30分～23時00分",
+    "sun": "日曜日: 11時30分～23時00分"
+   }
+  ]
+ },
+ {
+  "slug": "papin",
+  "name": "御徒町ワイン食堂パパン",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日定休。平日16:00〜/土14:00〜",
+  "candidates": [
+   {
+    "name": "御徒町ワイン食堂パパン",
+    "address": "日本、〒110-0005 東京都台東区上野３丁目１８−２ ふるかわビル 1F",
+    "status": "OPERATIONAL",
+    "dist_m": 5,
+    "sat": "土曜日: 14時00分～23時00分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "dagiorgio",
+  "name": "da GIORGIO",
+  "cur_sun": "11:30〜14:30 / 17:00〜22:00",
+  "cur_sun_note": "日祝もランチ営業あり。月曜定休",
+  "candidates": [
+   {
+    "name": "daGIORGIO(ダ ジョルジョ)",
+    "address": "日本、〒113-0034 東京都文京区湯島３丁目３７−１４ ソルミオビル 1F・2F",
+    "status": "OPERATIONAL",
+    "dist_m": 5,
+    "sat": "土曜日: 11時30分～14時30分, 17時00分～22時00分",
+    "sun": "日曜日: 11時30分～14時30分, 17時00分～22時00分"
+   }
+  ]
+ },
+ {
+  "slug": "iwateya",
+  "name": "岩手屋 本店",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日定休。月〜土16:00〜22:00",
+  "candidates": [
+   {
+    "name": "岩手屋 本店",
+    "address": "日本、〒113-0034 東京都文京区湯島３丁目３８−８",
+    "status": "OPERATIONAL",
+    "dist_m": 8,
+    "sat": "土曜日: 16時00分～21時00分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "chanfe",
+  "name": "CHANFE TOKYO",
+  "cur_sun": "17:30〜22:00",
+  "cur_sun_note": "不定休あり。一部サイトに閉店表記があるため訪問前に要確認",
+  "candidates": [
+   {
+    "name": "Chanfe Tokyo / シャンフェ東京",
+    "address": "湯島要ビル 1B, ３丁目-４４-9 湯島 文京区 東京都 113-0034 日本",
+    "status": "CLOSED_PERMANENTLY",
+    "dist_m": 3,
+    "sat": null,
+    "sun": null
+   }
+  ]
+ },
+ {
+  "slug": "torisei",
+  "name": "鳥清",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日定休。平日17:00〜",
+  "candidates": [
+   {
+    "name": "鳥清",
+    "address": "日本、〒110-0015 東京都台東区東上野３丁目１７−３",
+    "status": "OPERATIONAL",
+    "dist_m": 11,
+    "sat": "土曜日: 定休日",
+    "sun": "日曜日: 定休日"
+   },
+   {
+    "name": "鳥清本店",
+    "address": "日本、〒111-0024 東京都台東区今戸２丁目２１−８",
+    "status": "OPERATIONAL",
+    "dist_m": 2692,
+    "sat": "土曜日: 8時00分～19時00分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "masumi",
+  "name": "真澄",
+  "cur_sun": "定休日",
+  "cur_sun_note": "土日祝定休",
+  "candidates": [
+   {
+    "name": "真澄",
+    "address": "日本、〒110-0016 東京都台東区台東４丁目２５−２",
+    "status": "OPERATIONAL",
+    "dist_m": 7,
+    "sat": "土曜日: 定休日",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "sasanoya",
+  "name": "炭焼き やきとり ささのや",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日定休。月〜土は15:00頃〜22:00",
+  "candidates": [
+   {
+    "name": "炭焼き やきとり ささのや",
+    "address": "日本、〒110-0003 東京都台東区根岸１丁目３−２０",
+    "status": "OPERATIONAL",
+    "dist_m": 10,
+    "sat": "土曜日: 15時30分～22時00分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "sekisho",
+  "name": "居酒屋 関所",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日定休。月〜土16:30〜23:30",
+  "candidates": [
+   {
+    "name": "関所",
+    "address": "日本、〒110-0003 東京都台東区根岸１丁目７−３",
+    "status": "OPERATIONAL",
+    "dist_m": 7,
+    "sat": "土曜日: 16時30分～23時30分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ },
+ {
+  "slug": "shinanoji",
+  "name": "信濃路 鶯谷店",
+  "cur_sun": "7:00〜23:50",
+  "cur_sun_note": "年中無休。朝7時から飲める",
+  "candidates": [
+   {
+    "name": "信濃路 鶯谷店",
+    "address": "日本、〒110-0003 東京都台東区根岸１丁目７−４",
+    "status": "OPERATIONAL",
+    "dist_m": 6,
+    "sat": "土曜日: 7時00分～0時00分",
+    "sun": "日曜日: 7時00分～0時00分"
+   }
+  ]
+ },
+ {
+  "slug": "kagiya",
+  "name": "鍵屋",
+  "cur_sun": "定休日",
+  "cur_sun_note": "日曜・祝日定休。月〜土17:00〜21:00",
+  "candidates": [
+   {
+    "name": "鍵屋",
+    "address": "日本、〒110-0003 東京都台東区根岸３丁目６−２３−１８",
+    "status": "OPERATIONAL",
+    "dist_m": 16,
+    "sat": "土曜日: 17時00分～20時00分",
+    "sun": "日曜日: 定休日"
+   }
+  ]
+ }
+]

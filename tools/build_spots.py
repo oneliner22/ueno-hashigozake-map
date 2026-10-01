@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-"""上野版スポット定義 -> data/spots.json
+"""上野版スポット定義 -> data/spots.json  (使い方: リポ直下で python tools/build_spots.py)
 YouTube居酒屋動画8本(ヨウヤク堂在庫)から洗い出した上野・御徒町・湯島・鶯谷の名酒場。
-videos は data/videos.json のIDを参照。
+videos は data/videos.json のIDを参照し、出力では sources[{type:youtube,id}] になる。
 座標: 国土地理院ジオコーディングAPI実測(番地レベル)。同番地の店は微小オフセット。
 sun: 日曜の営業時間(2026年7月調査、食べログ/公式サイト等)。sun_class: lunch(15時前開店)/evening/closed。
+sat: 土曜の営業時間(2026年10月、Google Places の曜日別営業時間。tools/fetch_weekend_hours.py → weekend_hours_log.json)。sat_class も同じ区分。
 """
 import json, io
 
@@ -19,7 +20,8 @@ AREAS = [
 SPOTS = []
 def add(slug, name, area, cat, lat, lng, approx, desc, videos, sun=None, sun_class=None, sun_note=None):
     s = {"slug": slug, "name": name, "area": area, "cat": cat,
-         "lat": lat, "lng": lng, "approx": approx, "desc": desc, "videos": videos}
+         "lat": lat, "lng": lng, "approx": approx, "desc": desc,
+         "sources": [{"type": "youtube", "id": v} for v in videos]}
     if sun: s["sun"] = sun
     if sun_class: s["sun_class"] = sun_class
     if sun_note: s["sun_note"] = sun_note
@@ -125,7 +127,7 @@ add("iwateya", "岩手屋 本店", "yushima", "老舗・郷土の味", 35.708031
     ["Hj2dpTKIzog"],
     sun="定休日", sun_class="closed", sun_note="日曜・祝日定休。月〜土16:00〜22:00")
 add("chanfe", "CHANFE TOKYO", "yushima", "バー・ビストロ", 35.709068, 139.771317, False,
-    "ロサンゼルスで高級店を経営していた店主がオープンした大人の隠れ家バー（湯島3-44-9 地下）。ミシュラン店でしか飲めない高級ビール「ROCOCO Tokyo WHITE」や美しいカクテル、大人のためのバスクチーズケーキを提供。",
+    "ロサンゼルスで高級店を経営していた店主がオープンした大人の隠れ家バー（湯島3-44-9 地下）。ミシュラン店でしか飲めない高級ビール「ROCOCO Tokyo WHITE」や美しいカクテル、大人のためのバスクチーズケーキを提供。※2026年10月時点でGoogleマップ上は「閉業」表示のため、訪問前に要確認。",
     ["ScQoJ2IuCMQ"],
     sun="17:30〜22:00", sun_class="evening", sun_note="不定休あり。一部サイトに閉店表記があるため訪問前に要確認")
 
@@ -157,9 +159,48 @@ add("kagiya", "鍵屋", "uguisudani", "老舗・郷土の味", 35.722107, 139.78
     ["Hj2dpTKIzog"],
     sun="定休日", sun_class="closed", sun_note="日曜・祝日定休。月〜土17:00〜21:00")
 
+# ---- 土曜の営業（2026年10月 Google Places。日曜データと食い違う店は注記） ----
+SAT = {
+    "daitoryo-honten": ("10:00〜23:30", "lunch", None),
+    "daitoryo-shiten": ("10:00〜23:30", "lunch", None),
+    "takioka":         ("7:00〜23:00", "lunch", "朝7時から飲める"),
+    "kadokura":        ("11:00〜23:00", "lunch", None),
+    "ohyama":          ("11:00〜21:00", "lunch", "閉店時刻は情報源により21:00〜22:00と揺れあり"),
+    "kacchan":         ("11:00〜22:00", "lunch", None),
+    "hamachan":        ("11:30〜23:00", "lunch", None),
+    "toribancho":      ("11:30〜23:30", "lunch", "土日祝は昼から"),
+    "hokuhan":         ("17:00〜22:30", "evening", "8月は土曜も休み"),
+    "tarumatsu":       ("11:00〜22:00", "lunch", None),
+    "cocktailworks":   ("17:30〜翌2:30", "evening", None),
+    "butabazaar":      ("16:00〜22:30", "evening", "土日祝はディナーのみ"),
+    "seiseihanten":    ("11:00〜15:00 / 17:00〜23:00", "lunch", None),
+    "lecrin":          ("11:00〜22:30", "lunch", "閉店時刻は情報源により揺れあり"),
+    "santaro":         ("14:00〜23:00", "lunch", "土日祝は14:00開店。不定休"),
+    "torahachi":       ("16:00〜23:20", "evening", None),
+    "tokitori":        ("17:00〜23:00", "evening", "要予約"),
+    "renkon":          ("16:00〜23:30", "evening", None),
+    "nagaokaya":       ("12:00〜22:30", "lunch", None),
+    "tamura":          ("17:00〜翌9:00", "evening", "開店時刻は情報源により16:00/17:00と揺れあり"),
+    "papin":           ("14:00〜23:00", "lunch", None),
+    "dagiorgio":       ("11:30〜14:30 / 17:00〜22:00", "lunch", "ランチ営業あり"),
+    "iwateya":         ("16:00〜21:00", "evening", None),
+    "chanfe":          ("不明", "unknown", "Googleマップ上は「閉業」表示。訪問前に要確認"),
+    "torisei":         ("定休日", "closed", "土日祝定休"),
+    "masumi":          ("定休日", "closed", "土日祝定休"),
+    "sasanoya":        ("15:30〜22:00", "evening", None),
+    "sekisho":         ("16:30〜23:30", "evening", None),
+    "shinanoji":       ("7:00〜24:00", "lunch", "年中無休。朝7時から飲める"),
+    "kagiya":          ("17:00〜20:00", "evening", "閉店時刻は情報源により20:00〜21:00と揺れあり"),
+}
+for s in SPOTS:
+    sat, cls, note = SAT[s["slug"]]
+    s["sat"] = sat
+    s["sat_class"] = cls
+    if note: s["sat_note"] = note
+
 # ---- 出力 & バリデーション ----
 videos = json.load(io.open("data/videos.json", encoding="utf-8"))
-missing = [(s["slug"], v) for s in SPOTS for v in s["videos"] if v not in videos]
+missing = [(s["slug"], x["id"]) for s in SPOTS for x in s["sources"] if x["id"] not in videos]
 print("video id not found:", missing if missing else "none")
 slugs = [s["slug"] for s in SPOTS]
 assert len(slugs) == len(set(slugs)), "duplicate slug"
@@ -168,11 +209,14 @@ assert all(s["area"] in areas for s in SPOTS), "unknown area"
 nosun = [s["slug"] for s in SPOTS if "sun" not in s or "sun_class" not in s]
 print("spots without sunday hours:", nosun if nosun else "none")
 assert all(s.get("sun_class") in ("lunch", "evening", "closed") for s in SPOTS), "bad sun_class"
+assert all(s.get("sat_class") in ("lunch", "evening", "closed", "unknown") for s in SPOTS), "bad sat_class"
+assert set(SAT) == set(slugs), "SAT と SPOTS の slug が一致しない"
 
 json.dump({"areas": AREAS, "spots": SPOTS},
           io.open("data/spots.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print("spots:", len(SPOTS), "areas:", len(AREAS),
-      "videos used:", len({v for s in SPOTS for v in s['videos']}),
+      "videos used:", len({x["id"] for s in SPOTS for x in s["sources"]}),
       "| sun lunch:", sum(1 for s in SPOTS if s["sun_class"] == "lunch"),
       "evening:", sum(1 for s in SPOTS if s["sun_class"] == "evening"),
-      "closed:", sum(1 for s in SPOTS if s["sun_class"] == "closed"))
+      "closed:", sum(1 for s in SPOTS if s["sun_class"] == "closed"),
+      "| sat", {k: sum(1 for s in SPOTS if s["sat_class"] == k) for k in ("lunch", "evening", "closed", "unknown")})
